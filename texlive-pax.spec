@@ -1,3 +1,9 @@
+# revision 23306
+# category Package
+# catalog-ctan /macros/latex/contrib/pax/pax-tds.zip
+# catalog-date 2011-07-06 15:36:58 +0200
+# catalog-license other-free
+# catalog-version v0.1k
 Name:		texlive-pax
 Version:	v0.1k
 Release:	1
@@ -60,6 +66,7 @@ right place. Project status: experimental.
 %doc %{_texmfdistdir}/source/latex/pax/src/MANIFEST.MF
 %doc %{_texmfdistdir}/source/latex/pax/src/PDFAnnotExtractor.java
 %doc %{_texmfdistdir}/source/latex/pax/src/StringVisitor.java
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -78,3 +85,5 @@ pushd %{buildroot}%{_javadir}
 popd
 mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf-dist %{buildroot}%{_datadir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
