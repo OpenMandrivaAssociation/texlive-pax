@@ -19,8 +19,6 @@ BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
 Provides:	texlive-pax.bin = %{EVRD}
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-source <= 20110705-3
 
 %description
 If PDF files are included using pdfTeX, PDF annotations are
@@ -33,20 +31,12 @@ if a PDF file is included, the package looks for the file with
 the annotation data, reads them and puts the annotations in the
 right place. Project status: experimental.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -67,7 +57,6 @@ right place. Project status: experimental.
 %doc %{_texmfdistdir}/source/latex/pax/src/MANIFEST.MF
 %doc %{_texmfdistdir}/source/latex/pax/src/PDFAnnotExtractor.java
 %doc %{_texmfdistdir}/source/latex/pax/src/StringVisitor.java
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -86,5 +75,3 @@ pushd %{buildroot}%{_javadir}
 popd
 mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf-dist %{buildroot}%{_datadir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
