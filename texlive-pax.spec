@@ -1,12 +1,12 @@
-# revision 23306
+# revision 26112
 # category Package
 # catalog-ctan /macros/latex/contrib/pax/pax-tds.zip
-# catalog-date 2011-07-06 15:36:58 +0200
+# catalog-date 2012-04-18 16:26:37 +0200
 # catalog-license other-free
 # catalog-version v0.1k
 Name:		texlive-pax
 Version:	v0.1k
-Release:	2
+Release:	3
 Summary:	Extract and reinsert PDF annotations with pdfTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/pax/pax-tds.zip
