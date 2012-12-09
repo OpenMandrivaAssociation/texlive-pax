@@ -75,3 +75,21 @@ pushd %{buildroot}%{_javadir}
 popd
 mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf-dist %{buildroot}%{_datadir}
+
+
+%changelog
+* Mon Jun 11 2012 Paulo Andrade <pcpa@mandriva.com.br> v0.1k-3
++ Revision: 805015
+- Update to latest release.
+
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> v0.1k-2
++ Revision: 754724
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> v0.1k-1
++ Revision: 719209
+- texlive-pax
+- texlive-pax
+- texlive-pax
+- texlive-pax
+
