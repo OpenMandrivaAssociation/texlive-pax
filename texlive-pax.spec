@@ -6,7 +6,7 @@
 # catalog-version v0.1k
 Name:		texlive-pax
 Version:	v0.1k
-Release:	7
+Release:	8
 Summary:	Extract and reinsert PDF annotations with pdfTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/pax/pax-tds.zip
