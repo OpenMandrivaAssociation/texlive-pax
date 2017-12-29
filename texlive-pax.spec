@@ -1,12 +1,6 @@
-# revision 26112
-# category Package
-# catalog-ctan /macros/latex/contrib/pax/pax-tds.zip
-# catalog-date 2012-04-18 16:26:37 +0200
-# catalog-license other-free
-# catalog-version v0.1k
 Name:		texlive-pax
-Version:	v0.1k
-Release:	11
+Version:	0.1l
+Release:	1
 Summary:	Extract and reinsert PDF annotations with pdfTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/pax/pax-tds.zip
@@ -75,21 +69,3 @@ pushd %{buildroot}%{_javadir}
 popd
 mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf-dist %{buildroot}%{_datadir}
-
-
-%changelog
-* Mon Jun 11 2012 Paulo Andrade <pcpa@mandriva.com.br> v0.1k-3
-+ Revision: 805015
-- Update to latest release.
-
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> v0.1k-2
-+ Revision: 754724
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> v0.1k-1
-+ Revision: 719209
-- texlive-pax
-- texlive-pax
-- texlive-pax
-- texlive-pax
-
