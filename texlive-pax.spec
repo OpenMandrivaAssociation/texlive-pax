@@ -1,6 +1,6 @@
 Name:		texlive-pax
 Version:	0.1l
-Release:	2
+Release:	3
 Summary:	Extract and reinsert PDF annotations with pdfTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/pax/pax-tds.zip
