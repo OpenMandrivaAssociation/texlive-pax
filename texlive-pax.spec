@@ -1,13 +1,13 @@
 Name:		texlive-pax
-Version:	0.1l
-Release:	3
+Version:	63509
+Release:	1
 Summary:	Extract and reinsert PDF annotations with pdfTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/pax/pax-tds.zip
 License:	OTHER-FREE
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pax.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pax.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pax.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pax.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pax.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pax.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -26,46 +26,38 @@ the annotation data, reads them and puts the annotations in the
 right place. Project status: experimental.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
 %{_bindir}/pdfannotextractor
-%{_javadir}/pax.jar
-%{_texmfdistdir}/scripts/pax/pax.jar
-%{_texmfdistdir}/scripts/pax/pdfannotextractor.pl
-%{_texmfdistdir}/tex/latex/pax/pax.sty
-%doc %{_texmfdistdir}/doc/latex/pax/README
+%{_datadir}/java/pax.jar
+%{_texmfdistdir}/scripts/pax
+%{_texmfdistdir}/tex/latex/pax
+%doc %{_texmfdistdir}/doc/latex/pax
 #- source
-%doc %{_texmfdistdir}/source/latex/pax/build.xml
-%doc %{_texmfdistdir}/source/latex/pax/license/LaTeX/lppl.txt
-%doc %{_texmfdistdir}/source/latex/pax/license/PDFAnnotExtractor/gpl.txt
-%doc %{_texmfdistdir}/source/latex/pax/src/Constants.java
-%doc %{_texmfdistdir}/source/latex/pax/src/Entry.java
-%doc %{_texmfdistdir}/source/latex/pax/src/EntryWriteException.java
-%doc %{_texmfdistdir}/source/latex/pax/src/MANIFEST.MF
-%doc %{_texmfdistdir}/source/latex/pax/src/PDFAnnotExtractor.java
-%doc %{_texmfdistdir}/source/latex/pax/src/StringVisitor.java
+%doc %{_texmfdistdir}/source/latex/pax
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_bindir}
 pushd %{buildroot}%{_bindir}
-    ln -sf %{_texmfdistdir}/scripts/pax/pdfannotextractor.pl pdfannotextractor
+ln -sf %{_texmfdistdir}/scripts/pax/pdfannotextractor.pl pdfannotextractor
 popd
-mkdir -p %{buildroot}%{_javadir}
-pushd %{buildroot}%{_javadir}
-    ln -sf %{_texmfdistdir}/scripts/pax/pax.jar pax.jar
+mkdir -p %{buildroot}%{_datadir}/java
+pushd %{buildroot}%{_datadir}/java
+ln -sf %{_texmfdistdir}/scripts/pax/pax.jar pax.jar
 popd
 mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf-dist %{buildroot}%{_datadir}
