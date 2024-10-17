@@ -3,7 +3,7 @@ Version:	63509
 Release:	2
 Summary:	Extract and reinsert PDF annotations with pdfTeX
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/pax/pax-tds.zip
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/pax/pax-tds.zip
 License:	OTHER-FREE
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pax.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pax.doc.r%{version}.tar.xz
